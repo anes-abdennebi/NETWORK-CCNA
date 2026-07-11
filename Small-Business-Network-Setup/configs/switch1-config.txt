@@ -1,0 +1,32 @@
+enable
+configure terminal
+
+vlan 10
+ name SALES
+vlan 20
+ name IT
+vlan 30
+ name GUEST
+exit
+
+interface fa0/3
+ switchport mode access
+ switchport access vlan 10
+exit
+
+interface fa0/4
+ switchport mode access
+ switchport access vlan 20
+exit
+
+interface fa0/5
+ switchport mode access
+ switchport access vlan 30
+exit
+
+interface fa0/24
+ switchport mode trunk
+exit
+
+end
+write memory
