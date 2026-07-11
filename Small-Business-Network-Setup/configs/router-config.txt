@@ -1,0 +1,24 @@
+enable
+configure terminal
+
+interface gig0/1
+ no shutdown
+exit
+
+interface gig0/1.10
+ encapsulation dot1Q 10
+ ip address 192.168.1.1 255.255.255.192
+exit
+
+interface gig0/1.20
+ encapsulation dot1Q 20
+ ip address 192.168.1.65 255.255.255.224
+exit
+
+interface gig0/1.30
+ encapsulation dot1Q 30
+ ip address 192.168.1.97 255.255.255.240
+exit
+
+end
+write memory
